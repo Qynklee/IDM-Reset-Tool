@@ -36,7 +36,7 @@ namespace IDM_Reset_Tool
                     procIDM.Kill();
                 }
 
-                foreach (var procIEMonitor in Process.GetProcessesByName("IEMonitor.exe"))
+                foreach (var procIEMonitor in Process.GetProcessesByName("IEMonitor"))
                 {
                     procIEMonitor.Kill();
                 }
@@ -48,5 +48,16 @@ namespace IDM_Reset_Tool
             return true;
         }
 
+        public string GetCurrentSID()
+        {
+            string currentSID = "";
+
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            NTAccount f = new NTAccount(userName);
+            SecurityIdentifier s = (SecurityIdentifier)f.Translate(typeof(SecurityIdentifier));
+            currentSID = s.ToString();
+
+            return currentSID;
+        }
     }
 }
