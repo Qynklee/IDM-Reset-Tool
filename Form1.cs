@@ -14,11 +14,14 @@ namespace IDM_Reset_Tool
     {
         private SystemTweak STW;
         private Reseter RST;
+        private LogWriter LOG;
+
         public Form1()
         {
             InitializeComponent();
             STW = new SystemTweak();
             RST = new Reseter();
+            LOG = new LogWriter("QYNKLEE");
         }
 
         private void btnDebug_Click(object sender, EventArgs e)
@@ -38,9 +41,10 @@ namespace IDM_Reset_Tool
                     RST.ResetRegKey();
                     RST.RegistrationWithTrialInfor();
                 }
-                catch
+                catch(Exception ex)
                 {
                     MessageBox.Show("Something were wrong!!! Please contact admin");
+                    LOG.LogWrite(ex.ToString());
                     return;
                 }
                 MessageBox.Show("Reset was successfully");
@@ -50,6 +54,16 @@ namespace IDM_Reset_Tool
             {
                 MessageBox.Show("Please re run as admin", "Admin Permission Required");
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult abouttool = MessageBox.Show("V1.2.0 Tested: IDM v6.38 build 1");
         }
     }
 }

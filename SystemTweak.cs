@@ -13,6 +13,8 @@ namespace IDM_Reset_Tool
     /// </summary>
     public class SystemTweak
     {
+        
+
         /// <summary>
         /// Check tool is run as admin ?
         /// </summary>
@@ -41,7 +43,7 @@ namespace IDM_Reset_Tool
                     procIEMonitor.Kill();
                 }
             }
-            catch(Exception)
+            catch
             {
                 throw;
             }
