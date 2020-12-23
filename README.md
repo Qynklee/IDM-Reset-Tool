@@ -1,5 +1,5 @@
 # IDM-Reset-Tool
-Reset IDM Trial
+IDM reset trial time tool.
 # Usage:
 - Run program as admin.
 - Click Reset!
