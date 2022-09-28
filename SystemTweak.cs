@@ -42,6 +42,13 @@ namespace IDM_Reset_Tool
                 {
                     procIEMonitor.Kill();
                 }
+
+                //kill IDMMsgHost because: Local\IDMEventMonitor, \\.\pipe\IDMNetworkMonitor.
+                //use from v6.41b2
+                foreach (var procIDMMsgHost in Process.GetProcessesByName("IDMMsgHost"))
+                {
+                    procIDMMsgHost.Kill();
+                }
             }
             catch
             {
