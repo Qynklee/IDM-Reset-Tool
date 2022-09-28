@@ -14,9 +14,10 @@ namespace IDM_Reset_Tool
         [STAThread]
         static void Main()
         {
+            string Version = "V1.2.2";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(Version));
         }
     }
 }

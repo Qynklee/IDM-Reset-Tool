@@ -63,7 +63,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -78,7 +78,7 @@
             // aboutProgramToolStripMenuItem
             // 
             this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.aboutProgramToolStripMenuItem.Text = "About program";
             this.aboutProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Reset IDM Tool V1.1.1";
+            this.Text = "Reset IDM Tool";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

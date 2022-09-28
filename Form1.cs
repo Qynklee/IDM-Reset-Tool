@@ -16,12 +16,13 @@ namespace IDM_Reset_Tool
         private Reseter RST;
         private LogWriter LOG;
 
-        public Form1()
+        public Form1(string VERSION)
         {
             InitializeComponent();
             STW = new SystemTweak();
             RST = new Reseter();
             LOG = new LogWriter("QYNKLEE");
+            this.Text = "Reset IDM Tool " + VERSION;
         }
 
         private void btnDebug_Click(object sender, EventArgs e)
@@ -63,7 +64,7 @@ namespace IDM_Reset_Tool
 
         private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult abouttool = MessageBox.Show("V1.2.1 Tested: IDM v6.41 build 2");
+            DialogResult abouttool = MessageBox.Show("Tested: IDM v6.41 build 2");
         }
     }
 }
