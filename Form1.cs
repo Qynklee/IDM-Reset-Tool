@@ -67,7 +67,7 @@ namespace IDM_Reset_Tool
 
         private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult abouttool = MessageBox.Show("Tested: IDM v6.41 build 2");
+            DialogResult abouttool = MessageBox.Show("Tested: IDM v6.41 build 6");
         }
     }
 }
