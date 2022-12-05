@@ -41,6 +41,9 @@ namespace IDM_Reset_Tool
                     RST.DeleteKeySIDValue();
                     RST.ResetRegKey();
                     RST.RegistrationWithTrialInfor();
+                    string FolderDeleted = RST.DeleteOldSettingsBAKFile();
+
+                    LOG.LogWrite("Deleted " + FolderDeleted);
                 }
                 catch(Exception ex)
                 {

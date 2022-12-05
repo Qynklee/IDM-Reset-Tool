@@ -48,7 +48,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(393, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(392, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,7 +94,7 @@
             // 
             // btnAutoReset
             // 
-            this.btnAutoReset.Location = new System.Drawing.Point(12, 142);
+            this.btnAutoReset.Location = new System.Drawing.Point(3, 290);
             this.btnAutoReset.Name = "btnAutoReset";
             this.btnAutoReset.Size = new System.Drawing.Size(368, 81);
             this.btnAutoReset.TabIndex = 2;
@@ -104,7 +104,7 @@
             // btnDebug
             // 
             this.btnDebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDebug.Location = new System.Drawing.Point(12, 238);
+            this.btnDebug.Location = new System.Drawing.Point(377, 290);
             this.btnDebug.Name = "btnDebug";
             this.btnDebug.Size = new System.Drawing.Size(368, 81);
             this.btnDebug.TabIndex = 3;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 128);
+            this.ClientSize = new System.Drawing.Size(392, 125);
             this.Controls.Add(this.btnDebug);
             this.Controls.Add(this.btnAutoReset);
             this.Controls.Add(this.btnReset);

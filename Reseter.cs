@@ -1,9 +1,11 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IDM_Reset_Tool
 {
@@ -66,7 +68,7 @@ namespace IDM_Reset_Tool
                 //FIX:
                 Registry.CurrentUser.DeleteSubKeyTree(@"SOFTWARE\Backup_IDM", false);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -81,7 +83,7 @@ namespace IDM_Reset_Tool
                 string SID = STW.GetCurrentSID();
 
                 //ID1:
-                Registry.Users.DeleteSubKeyTree(SID + @"\Software\Classes\CLSID\" + ID1,false);
+                Registry.Users.DeleteSubKeyTree(SID + @"\Software\Classes\CLSID\" + ID1, false);
                 Registry.Users.DeleteSubKeyTree(SID + @"_Classes\CLSID\" + ID1, false);
 
                 //ID2:
@@ -152,38 +154,50 @@ namespace IDM_Reset_Tool
             {
                 //+++++++++++++++++++++++++++ Old Menthod:
                 //1
-                Registry.LocalMachine.CreateSubKey(@"Software\Internet Download Manager",true);
-                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager",true).SetValue("FName", "", RegistryValueKind.String);
+                Registry.LocalMachine.CreateSubKey(@"Software\Internet Download Manager", true);
+                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("FName", "", RegistryValueKind.String);
                 Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("LName", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager",true).SetValue("Email", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager",true).SetValue("Serial", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("Email", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("Serial", "", RegistryValueKind.String);
 
-                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager",true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager",true).SetValue("scansk", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager",true).SetValue("tvfrdt", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("scansk", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Internet Download Manager", true).SetValue("tvfrdt", "", RegistryValueKind.String);
 
-                Registry.LocalMachine.CreateSubKey(@"Software\Wow6432Node\Internet Download Manager",true);
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("FName", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("LName", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("Email", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("Serial", "", RegistryValueKind.String);
+                Registry.LocalMachine.CreateSubKey(@"Software\Wow6432Node\Internet Download Manager", true);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("FName", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("LName", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("Email", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("Serial", "", RegistryValueKind.String);
 
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("scansk", "", RegistryValueKind.String);
-                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager",true).SetValue("tvfrdt", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("scansk", "", RegistryValueKind.String);
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("tvfrdt", "", RegistryValueKind.String);
+
+                Registry.LocalMachine.OpenSubKey(@"Software\Wow6432Node\Internet Download Manager", true).SetValue("InstallStatus", 1, RegistryValueKind.DWord);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
 
-                //++++++++++++++++++++++++++++++New Menthod:
-                Registry.CurrentUser.CreateSubKey(@"Software\DownloadManager",true);
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("FName", "", RegistryValueKind.String);
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("LName", "", RegistryValueKind.String);
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("Email", "", RegistryValueKind.String);
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("Serial", "", RegistryValueKind.String);
+            try {
+            //++++++++++++++++++++++++++++++New Menthod:
+            Registry.CurrentUser.CreateSubKey(@"Software\DownloadManager", true);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("FName", "", RegistryValueKind.String);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("LName", "", RegistryValueKind.String);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("Email", "", RegistryValueKind.String);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("Serial", "", RegistryValueKind.String);
 
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("scansk", "", RegistryValueKind.String);
-                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager",true).SetValue("tvfrdt", "", RegistryValueKind.String);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("scansk", "", RegistryValueKind.String);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("tvfrdt", "", RegistryValueKind.String);
 
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("LastCheckQU", 0, RegistryValueKind.DWord);
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("LstCheck", "", RegistryValueKind.String);
+                // counter open IDM.exe:
+                Registry.CurrentUser.OpenSubKey(@"Software\DownloadManager", true).SetValue("radxcnt", 0, RegistryValueKind.DWord);
 
 
                 //string SID = STW.GetCurrentSID();
@@ -192,7 +206,7 @@ namespace IDM_Reset_Tool
                 //Registry.Users.OpenSubKey(SID + @"Software\DownloadManager",true).SetValue("LName", "", RegistryValueKind.String);
                 //Registry.Users.OpenSubKey(SID + @"Software\DownloadManager",true).SetValue("Email", "", RegistryValueKind.String);
                 //Registry.Users.OpenSubKey(SID + @"Software\DownloadManager",true).SetValue("Serial", "", RegistryValueKind.String);
-                             
+
                 //Registry.Users.OpenSubKey(SID + @"Software\DownloadManager",true).SetValue("CheckUpdtVM", "", RegistryValueKind.String);
                 //Registry.Users.OpenSubKey(SID + @"Software\DownloadManager",true).SetValue("scansk", "", RegistryValueKind.String);
                 //Registry.Users.OpenSubKey(SID + @"Software\DownloadManager",true).SetValue("tvfrdt", "", RegistryValueKind.String);
@@ -201,7 +215,29 @@ namespace IDM_Reset_Tool
             {
                 throw;
             }
+
+
             return true;
+        }
+
+
+        public string DeleteOldSettingsBAKFile()
+        {
+            //string cachePath = "C:\Users\<USERNAME>\AppData\Roaming\DMCache\settings.bak";
+
+            string AppDataFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string FolderToDelete = Path.Combine(AppDataFolder, "DMCache");
+
+            try
+            {
+                Directory.Delete(FolderToDelete, true);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return FolderToDelete;
         }
     }
 }
